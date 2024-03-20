@@ -41,6 +41,12 @@ export interface AuthConfig {
     enableRegister: boolean;
     minimalPasswordStrength: number;
   };
+  discord: {
+    clientID: string;
+    clientSecred: string;
+    scope: string;
+    prompt: boolean;
+  };
   github: {
     clientID: string;
     clientSecret: string;
@@ -119,6 +125,12 @@ const authSchema = Joi.object({
       .max(4)
       .optional()
       .label('HD_AUTH_LOCAL_MINIMAL_PASSWORD_STRENGTH'),
+  },
+  discord: {
+    clientID: Joi.string().optional().label('HD_AUTH_DISCORD_CLIENT_ID'),
+    clientSecred: Joi.string().optional().label('HD_AUTH_DISCORD_CLIENT_ID'),
+    scope: Joi.string().optional().label('HD_AUTH_DISCORD_SCOPE'),
+    prompt: Joi.bool().optional().label('HD_AUTH_DISCORD_PROMPT'),
   },
   github: {
     clientID: Joi.string().optional().label('HD_AUTH_GITHUB_CLIENT_ID'),
@@ -381,6 +393,12 @@ export default registerAs('authConfig', () => {
         minimalPasswordStrength: parseOptionalNumber(
           process.env.HD_AUTH_LOCAL_MINIMAL_PASSWORD_STRENGTH,
         ),
+      },
+      discord: {
+        clientID: process.env.HD_AUTH_DISCORD_CLIENT_ID,
+        clientSecred: process.env.HD_AUTH_DISCORD_CLIENT_ID,
+        scope: process.env.HD_AUTH_DISCORD_SCOPE,
+        prompt: process.env.HD_AUTH_DISCORD_PROMPT,
       },
       github: {
         clientID: process.env.HD_AUTH_GITHUB_CLIENT_ID,

@@ -19,6 +19,12 @@ export function createDefaultMockAuthConfig(): AuthConfig {
       enableRegister: true,
       minimalPasswordStrength: 2,
     },
+    discord: {
+      clientID: '',
+      clientSecred: '',
+      scope: '',
+      prompt: '',
+    },
     github: {
       clientID: '',
       clientSecret: '',

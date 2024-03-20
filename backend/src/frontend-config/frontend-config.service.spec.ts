@@ -182,6 +182,11 @@ describe('FrontendConfigService', () => {
         }).compile();
         const service = module.get(FrontendConfigService);
         const config = await service.getFrontendConfig();
+        if (authConfig.discord.clientID) {
+          expect(config.authProviders).toContainEqual({
+            type: AuthProviderType.DISCORD,
+          });
+        }
         if (authConfig.google.clientID) {
           expect(config.authProviders).toContainEqual({
             type: AuthProviderType.GOOGLE,

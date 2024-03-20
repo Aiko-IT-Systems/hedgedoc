@@ -22,6 +22,9 @@ export const branding = {
 
 export const authProviders = [
   {
+    type: AuthProviderType.DISCORD
+  },
+  {
     type: AuthProviderType.GITHUB
   },
   {

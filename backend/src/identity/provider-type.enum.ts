@@ -12,4 +12,5 @@ export enum ProviderType {
   GITLAB = 'gitlab',
   GITHUB = 'github',
   GOOGLE = 'google',
+  DISCORD = 'discord',
 }

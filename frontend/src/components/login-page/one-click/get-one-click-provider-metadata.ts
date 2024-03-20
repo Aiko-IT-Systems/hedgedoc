@@ -10,6 +10,7 @@ import {
   Github as IconGithub,
   Google as IconGoogle,
   People as IconPeople,
+  Discord as IconDiscord,
   PersonRolodex as IconPersonRolodex
 } from 'react-bootstrap-icons'
 import { Logger } from '../../../utils/logger'
@@ -38,6 +39,13 @@ const logger = new Logger('GetOneClickProviderMetadata')
  */
 export const getOneClickProviderMetadata = (provider: AuthProvider): OneClickMetadata => {
   switch (provider.type) {
+    case AuthProviderType.DISCORD:
+      return {
+        name: 'Discord',
+        icon: IconDiscord,
+        className: styles['btn-social-discord'],
+        url: getBackendAuthUrl('discord')
+      }
     case AuthProviderType.GITHUB:
       return {
         name: 'GitHub',

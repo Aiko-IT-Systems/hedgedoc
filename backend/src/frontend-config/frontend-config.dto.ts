@@ -27,6 +27,7 @@ export enum AuthProviderType {
   GITLAB = 'gitlab',
   GITHUB = 'github',
   GOOGLE = 'google',
+  DISCORD = 'discord',
 }
 
 export type AuthProviderTypeWithCustomName =
@@ -38,7 +39,8 @@ export type AuthProviderTypeWithCustomName =
 export type AuthProviderTypeWithoutCustomName =
   | AuthProviderType.LOCAL
   | AuthProviderType.GITHUB
-  | AuthProviderType.GOOGLE;
+  | AuthProviderType.GOOGLE
+  | AuthProviderType.DISCORD;
 
 export class AuthProviderWithoutCustomNameDto extends BaseDto {
   /**

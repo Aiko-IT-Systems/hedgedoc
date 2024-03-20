@@ -24,6 +24,7 @@ export enum GuestAccessLevel {
 }
 
 export enum AuthProviderType {
+  DISCORD = 'discord',
   GITHUB = 'github',
   GOOGLE = 'google',
   GITLAB = 'gitlab',
@@ -43,8 +44,10 @@ export type AuthProviderTypeWithoutCustomName =
   | AuthProviderType.GITHUB
   | AuthProviderType.GOOGLE
   | AuthProviderType.LOCAL
+  | AuthProviderType.DISCORD
 
 export const authProviderTypeOneClick = [
+  AuthProviderType.DISCORD,
   AuthProviderType.GITHUB,
   AuthProviderType.GITLAB,
   AuthProviderType.GOOGLE,

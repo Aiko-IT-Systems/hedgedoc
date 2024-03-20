@@ -66,6 +66,11 @@ export class FrontendConfigService {
         type: AuthProviderType.LOCAL,
       });
     }
+    if (this.authConfig.discord.clientID) {
+      providers.push({
+        type: AuthProviderType.DISCORD,
+      });
+    }
     if (this.authConfig.github.clientID) {
       providers.push({
         type: AuthProviderType.GITHUB,
