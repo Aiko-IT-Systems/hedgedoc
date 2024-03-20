@@ -23,7 +23,7 @@ export function createDefaultMockAuthConfig(): AuthConfig {
       clientID: '',
       clientSecred: '',
       scope: '',
-      prompt: '',
+      prompt: false,
     },
     github: {
       clientID: '',
