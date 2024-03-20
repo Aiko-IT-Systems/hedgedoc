@@ -47,5 +47,9 @@
   "devDependencies": {
     "dotenv-cli": "7.3.0",
     "turbo": "1.12.3"
+  },
+  "dependencies": {
+    "@types/passport-discord": "^0.1.13",
+    "passport-discord": "^0.1.4"
   }
 }
