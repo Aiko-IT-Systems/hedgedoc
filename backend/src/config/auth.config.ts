@@ -128,7 +128,7 @@ const authSchema = Joi.object({
   },
   discord: {
     clientID: Joi.string().optional().label('HD_AUTH_DISCORD_CLIENT_ID'),
-    clientSecred: Joi.string().optional().label('HD_AUTH_DISCORD_CLIENT_ID'),
+    clientSecred: Joi.string().optional().label('HD_AUTH_DISCORD_CLIENT_SECRET'),
     scope: Joi.string().optional().label('HD_AUTH_DISCORD_SCOPE'),
     prompt: Joi.bool().optional().label('HD_AUTH_DISCORD_PROMPT'),
   },
@@ -396,7 +396,7 @@ export default registerAs('authConfig', () => {
       },
       discord: {
         clientID: process.env.HD_AUTH_DISCORD_CLIENT_ID,
-        clientSecred: process.env.HD_AUTH_DISCORD_CLIENT_ID,
+        clientSecred: process.env.HD_AUTH_DISCORD_CLIENT_SECRET,
         scope: process.env.HD_AUTH_DISCORD_SCOPE,
         prompt: process.env.HD_AUTH_DISCORD_PROMPT,
       },
